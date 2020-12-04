@@ -1,6 +1,6 @@
 require "kornelia_palindrome/version"
 
-class String 
+module KorneliaPalindrome 
   
   def palindrome?
     processed_content == processed_content.reverse
@@ -9,7 +9,15 @@ class String
   private 
  
    def processed_content
-     downcase.scan(/[a-zA-Z]+/).join
+     to_s.downcase.scan(/[a-z0-9]+/).join
    end 
 
 end
+
+class String
+  include KorneliaPalindrome
+end 
+
+class Integer
+  include KorneliaPalindrome
+end 
