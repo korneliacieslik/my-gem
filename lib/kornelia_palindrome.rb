@@ -3,8 +3,10 @@ require "kornelia_palindrome/version"
 module KorneliaPalindrome 
   
   def palindrome?
-    processed_content == processed_content.reverse
-  end
+    if ! processed_content.scan(/\S/).empty?
+      processed_content == processed_content.reverse
+    end
+  end  
 
   private 
  
